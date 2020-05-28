@@ -7,6 +7,6 @@
 Download
 - Vagrant 2.2.6+
 - Virtualbox 6.0+
-- '''bash git clone git@github.com:salecharohit/secerts-management-hashicorp-vault.git'''
-- '''bash cd 'secerts-management-hashicorp-vault' '''
-- '''bash vagrant up '''
+- git clone git@github.com:salecharohit/secerts-management-hashicorp-vault.git
+- cd 'secerts-management-hashicorp-vault
+- vagrant up
