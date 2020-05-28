@@ -1,0 +1,6 @@
+vault secrets enable kv
+vault kv put kv/database/mysql username=root password=toor
+vault kv get kv/database/mysql
+VAULT_TOKEN=s.WlaFHAyExaM4s5M30PNqZ652
+curl -X GET -H "X-Vault-Token:$VAULT_TOKEN" http://192.168.30.110:8200/v1/kv/database/mysql
+echo 'path " kv/database/mysql" { capabilities = ["read","list"] }' | vault policy write mysqldb –
