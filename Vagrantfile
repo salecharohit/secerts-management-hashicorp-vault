@@ -40,7 +40,6 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell",privileged: true, inline: <<-SHELL
-    apt-get update -y
     apt-get install curl jq unzip -y
     cd /opt/
 #   wget https://releases.hashicorp.com/vault/1.0.3/vault_1.0.3_linux_amd64.zip
