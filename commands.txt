@@ -7,19 +7,10 @@ vault secrets enable kv
 vault kv put kv/database/mysql username=root password=toor
 vault kv get kv/database/mysql
 VAULT_TOKEN=s.nfJH06Bve0ipeG2k7ynzOqNc
+vault token create -policy=mysqldb -format=json | jq -r '.auth.client_token'
 curl -X GET -H "X-Vault-Token:$VAULT_TOKEN" http://192.168.30.110:8200/v1/kv/database/mysql
 echo 'path "kv/database/mysql" { capabilities = ["read","list"] }' | vault policy write mysqldb -
-vault token create -policy=mysqldb -format=json | jq -r '.auth.client_token'
 vault token create -policy=mysqldb -format=json -ttl=15s
-VAULT_TOKEN=s.nfJH06Bve0ipeG2k7ynzOqNc
-curl -X GET -H "X-Vault-Token:$VAULT_TOKEN" http://192.168.30.110:8200/v1/kv/database/mysql
+while true; do echo -ne "`date`\r"; done
 vault token renew <token>
 vault token renew -accessor <access_token>
-
-Unseal Key 1: E+U8CS7Kke8jjWSD7deWqdc9bbwwEMvK8h8WWlkO7TIZ
-Unseal Key 2: mBIywzSSIJFQqxRaerPNrcqbWnHFlyknt4Kz0BN6EqaZ
-Unseal Key 3: nVVVow7dUctP5k/Rm1DNpzBAJHfe9W0O8p0TAsAqEDmo
-Unseal Key 4: BbCl4ySCxrX+He93prxTd4AnALkMUlF9pLAUdLDfVcOl
-Unseal Key 5: aAfmY7Diuz8p4JVOF1gyElZgyhbAcXHqdkKJ3B0TLhqh
-
-Initial Root Token: s.L57tm3jyn9Aon8pZ4xOF4KHV
