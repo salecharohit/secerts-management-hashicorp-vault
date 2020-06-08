@@ -14,12 +14,3 @@ vault token create -policy=mysqldb -format=json -ttl=30s
 while true; do echo -ne "`date`\r"; done
 vault token renew <token>
 vault token renew -accessor <access_token>
-
-
-Unseal Key 1: NVYlawobBk+Cx8/PWkd+ubUeGsHkRi1HCszD+qtCCwqY
-Unseal Key 2: ouUjMid4FcQ7BTPACiiIKnabJYfas3rZkj+zdoKzfMT4
-Unseal Key 3: RK9Jsj0jbLYtlllvhvcsDbCYH6vu3AEXOkUmGjG51TQT
-Unseal Key 4: d3S7OmH0F7S71cQrVfiN7mepYLaZg0gtPia4eQ88Hrqw
-Unseal Key 5: 3r8o9GO+W8fYfqxERX2KxKUHKMtdvUJMo3itAZFbrD8V
-
-Initial Root Token: s.Ia8jZACWdliLwPgyHGQ1rM9O
