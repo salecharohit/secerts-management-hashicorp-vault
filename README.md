@@ -1,5 +1,8 @@
 # Secrets Management using Hashicorp Vault Webinar for Nullcon
 
+# Recording of the Webinar
+[Secrets Management using Hashicorp Valut](https://youtu.be/tEmadhKh-1A)
+
 # Slides
 [Slides](./Slides.pdf)
 
