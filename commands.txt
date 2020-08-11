@@ -7,9 +7,9 @@ vault secrets enable kv
 vault kv put kv/database/mysql username=root password=toor
 vault kv get kv/database/mysql
 VAULT_TOKEN=s.nfJH06Bve0ipeG2k7ynzOqNc
+echo 'path "kv/database/mysql" { capabilities = ["read","list"] }' | vault policy write mysqldb -
 vault token create -policy=mysqldb -format=json | jq -r '.auth.client_token'
 curl -X GET -H "X-Vault-Token:$VAULT_TOKEN" http://192.168.30.110:8200/v1/kv/database/mysql
-echo 'path "kv/database/mysql" { capabilities = ["read","list"] }' | vault policy write mysqldb -
 vault token create -policy=mysqldb -format=json -ttl=30s
 while true; do echo -ne "`date`\r"; done
 vault token renew <token>
